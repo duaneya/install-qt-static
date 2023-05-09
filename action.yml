@@ -53,6 +53,6 @@ runs:
         mkdir build
         cd build
         rm ./*
-        ../configure ${{ runner.os == 'Windows' && '-platform win32-msvc' || '' }} -prefix ${{ inputs.dir }} -release -static -static-runtime ${{ inputs.configure-args }}
+        ../configure ${{ runner.os == 'Windows' && '-platform win32-msvc' || '' }} -prefix ${{ inputs.dir }} -debug-and-release -static -static-runtime ${{ inputs.configure-args }}
         cmake --build . --parallel 2
         cmake --install .
