@@ -49,10 +49,7 @@ runs:
         git clone https://code.qt.io/qt/qt5.git qt
         cd qt
         git checkout v${{ inputs.version }}
-        perl --version
-        echo ${{ inputs.submodules }}
-        echo perl init-repository -f --module-subset="${{ inputs.submodules }}"
-        perl init-repository -f --module-subset="${{ inputs.submodules }}"
+        perl ./init-repository -f --module-subset=${{ inputs.submodules }}
         
         mkdir build
         cd build
