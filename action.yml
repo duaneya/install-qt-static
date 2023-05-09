@@ -52,9 +52,7 @@ runs:
         perl ./init-repository -f --module-subset=${{ inputs.submodules }}
         mkdir build
         cd build
-        rm ../CMakeLists.txt
-        rm ../CMakeCache.txt
         rm ./*
         ../configure ${{ runner.os == 'Windows' && '-platform win32-msvc' || '' }} -prefix ${{ inputs.dir }} -release -static -static-runtime ${{ inputs.configure-args }}
-        cmake --build . --parallel 4
-        cmake --install .
+        nmake --build . --parallel 4
+        nmake --install .
