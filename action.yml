@@ -49,7 +49,9 @@ runs:
         git clone https://code.qt.io/qt/qt5.git qt
         cd qt
         git checkout v${{ inputs.version }}
+        perl --version
         perl init-repository -f --module-subset=${{ inputs.submodules }}
+        
         mkdir build
         cd build
         ../configure ${{ runner.os == 'Windows' && '-platform win32-msvc' || '' }} -prefix ${{ inputs.dir }} -release -static -static-runtime ${{ inputs.configure-args }}
