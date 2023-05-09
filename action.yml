@@ -54,5 +54,5 @@ runs:
         cd build
         rm ./*
         ../configure ${{ runner.os == 'Windows' && '-platform win32-msvc' || '' }} -prefix ${{ inputs.dir }} -release -static -static-runtime ${{ inputs.configure-args }}
-        cmake --build . --parallel 2
+        cmake --build . --parallel 4
         cmake --install .
