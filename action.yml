@@ -49,7 +49,7 @@ runs:
         git clone https://code.qt.io/qt/qt5.git qt
         cd qt
         git checkout v${{ inputs.version }}
-        perl init-repository -f --module-subset=qtbase,qt3d,qtcharts,qtdoc,qtimageformats,qtlocation,qtquick3d,qtquickcontrols2, qtquicktimeline,qtserialport,qtsvg,qttools,qttranslations,qtxmlpatterns
+        perl ./init-repository -f --module-subset=qtbase,qt3d,qtcharts,qtdoc,qtimageformats,qtlocation,qtquick3d,qtquickcontrols2, qtquicktimeline,qtserialport,qtsvg,qttools,qttranslations,qtxmlpatterns
 
         mkdir build
         cd build
